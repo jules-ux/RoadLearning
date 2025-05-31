@@ -17,14 +17,14 @@
       </div>
       <div class="Inputs">
         <div class="UserInput">
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="password" />
+          <input type="text" id="naam" placeholder="Username" />
+          <input type="password" id="wachtwoord" placeholder="Password" />
         </div>
         <div class="UserPasswordForgot">
           <a href="#">Forgot Password</a>
         </div>
         <div class="UserLoginRegisterButton">
-          <button>Register</button>
+          <button @click="registerUser()">Register</button>
         </div>
       </div>
     </div>
@@ -46,11 +46,27 @@ body {
 }
 
 @media (max-width: 780px) {
+  body {
+    overflow-y: hidden;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
   img {
     display: none;
   }
 
+  .InputFieldRegister > .TopLogoSchool {
+    justify-content: center;
+    align-self: center;
+    margin-top: 15vh;
+  }
 
+  .InputFieldRegister > .Inputs > .UserLoginRegisterButton > button {
+    width: 260px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 780px) {
@@ -62,12 +78,26 @@ body {
     display: block; /* voorkomt inline whitespace */
   }
 
+  .InputFieldRegister > .Inputs > .UserLoginRegisterButton > button {
+    width: 250px;
+  }
+
   .imgCardPhotoNow img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Zorgt dat afbeelding wordt bijgesneden om te vullen */
     object-position: center; /* Optioneel: focus op midden van afbeelding */
     display: block;
+  }
+
+  .InputFieldRegister > .TopLogoSchool {
+    justify-content: center;
+    align-self: center;
+    margin-top: 25vh;
+  }
+
+  .InputFieldRegister > .TopLogoSchool > img {
+    height: 70px;
   }
 }
 
@@ -79,14 +109,6 @@ body {
   width: 100%;
 }
 
-.InputFieldRegister > .TopLogoSchool {
-  justify-content: center;
-  align-self: center;
-  margin-top: 25vh;
-}
-.InputFieldRegister > .TopLogoSchool > img {
-  height: 70px;
-}
 .InputFieldRegister > .school-description {
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -118,13 +140,11 @@ body {
   margin-bottom: 3vh;
 }
 .InputFieldRegister > .Inputs > .UserLoginRegisterButton > button {
-  width: 250px;
   height: 30px;
   border-radius: 4px;
   border: none;
   color: white;
   font-family: 'Poppins', sans-serif;
-  font-size: bold;
   background-color: #a16b9f;
   transition: all 100ms ease-in;
 }
@@ -134,3 +154,18 @@ body {
   cursor: pointer;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    registerUser() {
+      const naam = document.getElementById("naam").value;
+      const pass = document.getElementById("wachtwoord").value;
+
+      // 2D array met naam en pass naast elkaar
+      const gebruikers = [[naam, pass]];
+      console.log(gebruikers[0][0] + " " + gebruikers[0][1]); // [[naam, pass]]
+    }
+  }
+}
+</script>

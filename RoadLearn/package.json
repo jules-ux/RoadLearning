@@ -1,0 +1,27 @@
+{
+  "name": "roadlearn",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "git": "^0.1.5",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "prettier": "3.5.3",
+    "vite": "^6.2.4",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "@vue/cli-service": "^5.0.0"  
+  }
+}

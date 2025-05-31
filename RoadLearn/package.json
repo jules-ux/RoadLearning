@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-cli-service build",
-    "serve": "vue-cli-service serve",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "format": "prettier --write src/"
